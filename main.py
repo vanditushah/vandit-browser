@@ -5,6 +5,7 @@ from PyQt5.QtWebEngineWidgets import *
 
 
 class MainWindow(QMainWindow):
+    
     def __init__(self):
         super(MainWindow, self).__init__()
         self.browser = QWebEngineView()
@@ -44,10 +45,14 @@ class MainWindow(QMainWindow):
     def navigate_to_url(self):
         url = self.url_bar.text()
         self.browser.setUrl(QUrl(url))
+
     def update_url(self, q):
         self.url_bar.setText(q.toString())
+
     def navigate_home(self):
         self.browser.setUrl(QUrl('http://google.com'))
+
+
 app = QApplication(sys.argv)
 QApplication.setApplicationName('vandit_s Browser')
 window = MainWindow()
